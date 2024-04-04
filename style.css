@@ -1,0 +1,486 @@
+@font-face {
+  font-family: "montserrat";
+  src: url("montserra/static/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "bold";
+  src: url("montserra/static/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: "gilroy";
+  src: url("Gilroy-Heavy.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  height: 145px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  padding: 0px 150px;
+  position: fixed;
+  z-index: 99;
+}
+
+.cursor {
+  height: 25px;
+  width: 25px;
+  background-color: #a8dc1a;
+  position: fixed;
+  z-index: 99;
+  border-radius: 50%;
+}
+.cursor-blur {
+  height: 300px;
+  width: 300px;
+  background-color: #72853f;
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: 9;
+}
+
+.nav img {
+  height: 70px;
+  margin-right: 70px;
+}
+
+.nav h4 {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+
+.main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.575);
+}
+
+#page1 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+}
+
+#page1 .arrow{
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  left: -2%;
+  bottom: 10%;
+  background-color: transparent;
+  border: 3px solid #ACE002;
+  transition: all ease 0.5s;
+}
+
+#page1 .arrow i{
+  font-size: 40px;
+  font-weight: 100;
+}
+
+#page1 .arrow:hover{
+  border: none;
+  scale: 0.5;
+  background-color: #95C11E;
+}
+
+#page1 h1 {
+  font-family: "bold";
+  font-size: 120px;
+  font-weight: 900;
+  position: relative;
+}
+
+#page1 h1::before {
+  content: "EAT. DRINK. PLAY.";
+  position: absolute;
+  color: #000;
+  top: -5px;
+  left: -5px;
+  -webkit-text-stroke: 3px #95c11e;
+  z-index: -1;
+}
+#page1 h2 {
+  font-family: "bold";
+  font-size: 33px;
+  font-weight: 900;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+#page1 p {
+  font-size: 20px;
+  font-weight: 500;
+  width: 43%;
+}
+
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+
+.scroller {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scroller h4 {
+  display: inline-block;
+  font-family: "gilroy";
+  font-size: 120px;
+  font-weight: 300;
+  color: transparent;
+  -webkit-text-stroke: 3px #95c11e;
+  margin-right: 60px;
+  transition: all linear 0.2s;
+}
+
+.scroller h4:hover {
+  color: #95c11e;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.about-us {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 40vh;
+  margin-top: 100px;
+  padding: 0px 50px;
+  position: relative;
+}
+.about-us img {
+  height: 250px;
+  width: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.about-us #about-us-in {
+  width: 50%;
+  text-align: center;
+  z-index: 10;
+}
+
+.about-us #about-us-in h2 {
+  font-size: 45px;
+  font-family: "bold";
+  font-weight: 900;
+}
+.about-us #about-us-in p {
+  font-size: 18px;
+  margin-top: 40px;
+  line-height: 32px;
+  font-family: "bold";
+}
+
+.cards-container {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.card {
+  height: 80%;
+  width: 25%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all ease 0.7s;
+}
+
+.card:hover {
+  transform: rotate3d(-1, 1, 0, 20deg);
+}
+
+#card1 {
+  background-image: url("https://sidcup-family-golf-rishabh07r.netlify.app/Assests/card1.avif");
+}
+#card2 {
+  background-image: url("https://sidcup-family-golf-rishabh07r.netlify.app/Assests/card2.webp");
+}
+#card3 {
+  background-image: url("https://sidcup-family-golf-rishabh07r.netlify.app/Assests/card3.avif");
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  padding-top: 70px;
+  text-align: center;
+  opacity: 0;
+  transition: all ease 0.7s;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  color: #000;
+  font-weight: 900;
+  font-family: "bold";
+  font-size: 35px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+
+.overlay p {
+  color: #000;
+}
+
+.green-div {
+  margin-top: 55px;
+  position: relative;
+  z-index: 10;
+  height: 30vh;
+  font-size: 23px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:linear-gradient(to left bottom, #95C11E, #a8dc1a);
+  padding: 0px 20px;
+}
+
+.green-div h3 {
+  width: 50%;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 40px;
+  color: #000;
+  font-family: 'bold';
+  font-weight: 900;
+}
+
+.green-div img {
+  height: 100%;
+  width: 10%;
+  object-fit: cover;
+  z-index: 10;
+}
+
+#image1{
+    transform: rotate(180deg);
+}
+
+.page3
+{
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page3>p{
+  font-size: 35px;
+  font-weight: 700;
+  width: 60%;
+  text-align: center;
+  line-height: 50px;
+}
+
+.page3 img{
+  position: absolute;
+  height: 60px;
+  z-index: 10;
+}
+
+.page3 #colon1{
+  left: 12%;
+  top: 22%;
+}
+.page3 #colon2{
+  right: 14%;
+  bottom: 26%;
+}
+
+.page4{
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+}
+
+.elem{
+  height: 50%;
+  width: 26%;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  z-index: 10;
+}
+.elem h2{
+  position: absolute;
+  color: black;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  background-color: #95C11E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  text-align: center;
+  font-family: 'bold';
+  font-weight: 900;
+  transition: all ease 0.5s;
+}
+
+.elem img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease 0.5s;
+  scale: 1.1;
+}
+
+.elem:hover h2{
+  background-color: transparent;
+  color: white;
+}
+.elem:hover img{
+  scale: 1;
+}
+
+.page4 h1 {
+  font-size: 6vw;
+  position: absolute;
+  top: 1.5%;
+  font-weight: 900;
+  font-family: 'gilroy';
+  color: #000;
+  -webkit-text-stroke: 2px #fff;
+}
+
+.footer {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6.5vw;
+  padding: 0 100px;
+}
+.footer > img {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+}
+#f1 img {
+  height: 100px;
+  padding-left: 20px;
+}
+#f1,
+#f2,
+#f3,
+#f4 {
+  width: fit-content;
+  position: relative;
+  z-index: 99;
+  /* background-color: red; */
+}
+#f2 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+#f3 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+#f4 h4 {
+  font-size: 1vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
